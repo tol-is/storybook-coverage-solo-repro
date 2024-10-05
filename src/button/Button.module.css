@@ -1,0 +1,29 @@
+.root {
+  color: black;
+  border-radius: 999px;
+  border: 1px solid #ccc;
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  flex: none;
+  box-sizing: border-box;
+  height: 32px;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 12px;
+  padding-right: 12px;
+  gap: 4px;
+  font-size: 14px;
+  cursor: pointer;
+
+  &:focus-visible {
+    outline: 1px solid black;
+    outline-offset: 2px;
+  }
+
+  &:hover {
+    background-color: #e5e5e5;
+  }
+}

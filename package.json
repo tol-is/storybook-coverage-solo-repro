@@ -1,0 +1,51 @@
+{
+  "name": "@repro/ui",
+  "private": true,
+  "scripts": {
+    "dev": "storybook dev -p 6006",
+    "storybook-test": "test-storybook --coverage --no-cache --verbose --url http://127.0.0.1:6006",
+    "test": "npx concurrently -k -s first -n \"Server,Test\" -c \"magenta,blue\" \"storybook dev --ci -p 6006\" \"wait-on http-get://127.0.0.1:6006 && npm run storybook-test\"",
+    "test:build": "storybook build --test && npx concurrently -k -s first -n \"Server,Test\" -c \"magenta,blue\" \"http-server ./storybook-static --port 6006 --silent\" \"wait-on http-get://127.0.0.1:6006 && npm run storybook-test\""
+  },
+  "devDependencies": {
+    "@storybook/addon-a11y": "8.3.5",
+    "@storybook/addon-actions": "8.3.5",
+    "@storybook/addon-coverage": "1.0.4",
+    "@storybook/addon-essentials": "8.3.5",
+    "@storybook/addon-interactions": "8.3.5",
+    "@storybook/addon-links": "8.3.5",
+    "@storybook/addon-mdx-gfm": "8.3.5",
+    "@storybook/addon-storysource": "8.3.5",
+    "@storybook/manager-api": "8.3.5",
+    "@storybook/react": "8.3.5",
+    "@storybook/react-vite": "8.3.5",
+    "@storybook/react-webpack5": "8.3.5",
+    "@storybook/test": "8.3.5",
+    "@storybook/test-runner": "^0.19.1",
+    "@storybook/theming": "8.3.5",
+    "@vitejs/plugin-react": "4.3.2",
+    "axe-playwright": "2.0.3",
+    "concurrently": "9.0.1",
+    "eslint": "8.57.0",
+    "eslint-config-prettier": "9.0.0",
+    "eslint-plugin-prettier": "5.0.1",
+    "eslint-plugin-simple-import-sort": "10.0.0",
+    "eslint-plugin-tsdoc": "0.3.0",
+    "eslint-plugin-unicorn": "48.0.1",
+    "eslint-plugin-unused-imports": "2.0.0",
+    "http-server": "14.1.1",
+    "lint-staged": "^15.2.10",
+    "playwright": "1.47.2",
+    "prettier": "3.3.3",
+    "serve": "14.2.1",
+    "storybook": "^8.3.5",
+    "typescript": "5.3.3",
+    "wait-on": "8.0.1"
+  },
+  "peerDependencies": {
+    "classnames": "2.5.1",
+    "next": "13.5.3",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+  }
+}
